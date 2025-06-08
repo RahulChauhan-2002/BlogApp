@@ -1,18 +1,18 @@
-//import mongoose
-const mongoose=require("mongoose");
+// Import mongoose
+const mongoose = require("mongoose");
 
-//route Handler
-
-const likeSchema=new mongoose.Schema({
-    post:{
-        Type:mongoose.Schema.Types.ObjectId,
-        ref:"Post"
+// Schema definition
+const likeSchema = new mongoose.Schema({
+    post: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Post",
+        required: true            
     },
-    user:{
-        type:String,
-        require:true
+    user: {
+        type: String,
+        required: true   
     }
 });
 
-//export 
-module.exports=mongoose.model("Like",likeSchema);
+// Export model
+module.exports = mongoose.model("Like", likeSchema);
